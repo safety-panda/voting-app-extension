@@ -1,0 +1,8 @@
+# Intellij Idea folder
+.idea/
+
+# Runtime Complied Code
+target/
+
+# Compiled Code
+out/
