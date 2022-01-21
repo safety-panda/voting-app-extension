@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.natasha.voting.controllers.VotingAppController">
+    <children>
+        <Pane prefHeight="417.0" prefWidth="306.0">
+            <children>
+                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="labelText" alignment="CENTER" layoutX="6.0" layoutY="41.0" prefHeight="19.0" prefWidth="294.0" text="Please enter your details to register as a Voter">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="fNameField" layoutX="96.0" layoutY="93.0" />
+                <Label layoutX="23.0" layoutY="96.0" text="First Name:" />
+                <TextField fx:id="lNameField" layoutX="96.0" layoutY="128.0" />
+                <Label layoutX="23.0" layoutY="131.0" text="Last Name:" />
+                <TextField fx:id="ageField" layoutX="96.0" layoutY="170.0" prefHeight="25.0" prefWidth="61.0" />
+                <Label layoutX="60.0" layoutY="174.0" text="Age:" />
+                <TextArea fx:id="addressField" layoutX="96.0" layoutY="209.0" prefHeight="85.0" prefWidth="160.0" />
+                <Label layoutX="38.0" layoutY="209.0" text="Address:" />
+
+                <Button layoutX="120.0" layoutY="300.0" mnemonicParsing="false" onAction="#onVoterRegisterSubmitButton" prefHeight="25.0" prefWidth="68.0" text="Submit">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Label fx:id="voterRegisterText" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="338.0" prefHeight="65.0" prefWidth="271.0" textAlignment="CENTER" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

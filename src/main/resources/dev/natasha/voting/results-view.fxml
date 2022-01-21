@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.natasha.voting.controllers.VotingAppController">
+    <children>
+        <Pane prefHeight="263.0" prefWidth="306.0">
+            <children>
+                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="labelText" alignment="CENTER" layoutX="52.0" layoutY="71.0" prefHeight="19.0" prefWidth="222.0" text="Election Results">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+            <Button fx:id="resultsButton" layoutX="123.0" layoutY="119.0" mnemonicParsing="false" onAction="#onResultsButtonClick" text="Get Results" />
+            <Label fx:id="resultsText" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="161.0" prefHeight="65.0" prefWidth="183.0" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -10,9 +10,9 @@ import java.io.IOException;
 public class VotingApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(VotingApp.class.getResource("voting-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        var fxmlLoader = new FXMLLoader(VotingApp.class.getResource("welcome-view.fxml"));
+        var scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Voting App");
         stage.setScene(scene);
         stage.show();
     }

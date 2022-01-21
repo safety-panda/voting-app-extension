@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="dev.natasha.voting.controllers.VotingAppController">
+    <children>
+        <Pane prefHeight="263.0" prefWidth="306.0">
+            <children>
+                <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="labelText" alignment="CENTER" layoutX="26.0" layoutY="96.0" prefHeight="19.0" prefWidth="222.0" text="What would you like to do?">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <ButtonBar buttonOrder="" layoutX="27.0" layoutY="132.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="253.0">
+                    <buttons>
+                        <Button alignment="CENTER" onAction="#onRegisterVoter" prefHeight="25.0" prefWidth="117.0" text="Register as Voter" translateX="-15.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#onVoteInElection" text="Vote in Election" translateX="-10.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
