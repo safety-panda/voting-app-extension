@@ -6,3 +6,6 @@ target/
 
 # Compiled Code
 out/
+
+# SQL lite database
+db.sqlite

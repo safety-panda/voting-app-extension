@@ -1,5 +1,6 @@
 package dev.natasha.voting;
 
+import dev.natasha.voting.controllers.DatabaseController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class VotingApp extends Application {
     }
 
     public static void main(String[] args) {
+        DatabaseController.connect();
         launch();
     }
 }

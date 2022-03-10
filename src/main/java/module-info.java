@@ -1,6 +1,7 @@
 module dev.natasha.voting {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens dev.natasha.voting to javafx.fxml;
