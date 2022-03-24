@@ -18,7 +18,7 @@ public class DatabaseController {
             conn = DriverManager.getConnection(url);
 
             System.out.println("Connection to SQLite has been established.");
-            System.out.println("Creating table...");
+            System.out.println("Creating user table...");
             stmt = conn.createStatement();
             String sql1 = "CREATE TABLE IF NOT EXISTS" +
                     " Users" +

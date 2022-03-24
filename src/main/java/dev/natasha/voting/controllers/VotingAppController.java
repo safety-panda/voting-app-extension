@@ -5,9 +5,7 @@ import dev.natasha.voting.objects.Voter;
 import dev.natasha.voting.navigator;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 
@@ -16,6 +14,8 @@ import java.util.Random;
 
 public class VotingAppController {
     private Election election = Election.getElection();
+    public String candidateOne = election.candidateOneName;
+    public String candidateTwo = election.candidateTwoName;
 
     @FXML
     private Label labelText;
@@ -89,31 +89,53 @@ public class VotingAppController {
     }
 
     @FXML
+    protected Button showCandidatesButton;
+
+    @FXML
+    private ButtonBar candidateButtonBar;
+
+    @FXML
+    private Button candidateOneVoteButton;
+
+    @FXML
+    private Button candidateTwoVoteButton;
+
+    @FXML
+    protected void onShowCandidates() {
+        candidateOneVoteButton.setText(election.candidateOneName);
+        candidateTwoVoteButton.setText(election.candidateTwoName);
+
+        showCandidatesButton.setVisible(false);
+        labelText.setVisible(true);
+        candidateButtonBar.setVisible(true);
+    }
+
+    @FXML
     private Label candidateSelectionText;
 
     @FXML
     protected void onCandidateOneButtonClick() {
         election.voteForCandidateOne();
-        candidateSelectionText.setText("You voted for Candidate One!");
+        candidateSelectionText.setText("You voted for " + election.candidateOneName + "!");
     }
 
     @FXML
     protected void onCandidateTwoButtonClick() {
         election.voteForCandidateTwo();
-        candidateSelectionText.setText("You voted for Candidate Two!");
+        candidateSelectionText.setText("You voted for "  + election.candidateTwoName + "!");
     }
 
     @FXML
     protected void onAuditorButtonClick() throws IOException {
         var stage = (Stage) labelText.getScene().getWindow();
-        stage.setScene(navigator.getScene("results-view.fxml"));
+        stage.setScene(navigator.getScene("auditor-view.fxml"));
         stage.setTitle("Auditor View");
     }
 
     @FXML
     protected void onAdministratorButtonClick() throws IOException {
         var stage = (Stage) labelText.getScene().getWindow();
-        stage.setScene(navigator.getScene("results-view.fxml"));
+        stage.setScene(navigator.getScene("auditor-view.fxml"));
         stage.setTitle("Administrator View");
     }
 

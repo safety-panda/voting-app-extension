@@ -3,19 +3,22 @@ package dev.natasha.voting.objects;
 public class Election {
     private static Election instance;
 
-    protected int candidateOne = 0;
-    protected int candidateTwo = 0;
+    public String candidateOneName = "Candidate One";
+    public String candidateTwoName = "Candidate Two";
+
+    protected int candidateOneVotes = 0;
+    protected int candidateTwoVotes = 0;
 
     public String getElectionResult() {
-        return "Candidate One: " + candidateOne + " votes." + System.lineSeparator() + "Candidate Two: " + candidateTwo + " votes.";
+        return candidateOneName + ": " + candidateOneVotes + " votes." + System.lineSeparator() + candidateTwoName + ": " + candidateTwoVotes + " votes.";
     }
 
     public void voteForCandidateOne() {
-        candidateOne++;
+        candidateOneVotes++;
     }
 
     public void voteForCandidateTwo() {
-        candidateTwo++;
+        candidateTwoVotes++;
     }
 
     public static Election getElection() {
