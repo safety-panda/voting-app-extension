@@ -133,17 +133,43 @@ public class VotingAppController {
     }
 
     @FXML
-    protected void onAdministratorButtonClick() throws IOException {
-        var stage = (Stage) labelText.getScene().getWindow();
-        stage.setScene(navigator.getScene("auditor-view.fxml"));
-        stage.setTitle("Administrator View");
-    }
-
-    @FXML
     private Label resultsText;
 
     @FXML
     protected void onResultsButtonClick() {
         resultsText.setText(election.getElectionResult());
     }
+
+    @FXML
+    protected void onAdministratorButtonClick() throws IOException {
+        var stage = (Stage) labelText.getScene().getWindow();
+        stage.setScene(navigator.getScene("administrator-view.fxml"));
+        stage.setTitle("Administrator View");
+    }
+
+    @FXML
+    private Label adminActionText;
+
+    @FXML
+    private TextField c1NameField;
+
+    @FXML
+    private TextField c2NameField;
+
+    @FXML
+    protected void onAdminResultsButtonClick() { adminActionText.setText(election.getElectionResult()); }
+
+    @FXML
+    protected void onSubmitCandidatesButton() {
+        String c1Name = c1NameField.getText();
+        String c2Name = c2NameField.getText();
+
+        election.setCandidateOneName(c1Name);
+        election.setCandidateTwoName(c2Name);
+
+        adminActionText.setText("The candidates are set to: " + c1Name + ", and  " + c2Name);
+
+        //adminActionText.setText("The candidates are set to: " + candidateOne + ", and  " + candidateTwo);
+    }
+
 }

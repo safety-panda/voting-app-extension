@@ -9,22 +9,28 @@ public class Election {
     protected int candidateOneVotes = 0;
     protected int candidateTwoVotes = 0;
 
-    public String getElectionResult() {
-        return candidateOneName + ": " + candidateOneVotes + " votes." + System.lineSeparator() + candidateTwoName + ": " + candidateTwoVotes + " votes.";
-    }
-
-    public void voteForCandidateOne() {
-        candidateOneVotes++;
-    }
-
-    public void voteForCandidateTwo() {
-        candidateTwoVotes++;
-    }
-
     public static Election getElection() {
         if (instance == null) {
             instance = new Election();
         }
         return Election.instance;
+    }
+
+    public void setCandidateOneName(String c1Name) {
+        candidateOneName = c1Name;
+    }
+    public void setCandidateTwoName(String c2Name) {
+        candidateTwoName = c2Name;
+    }
+
+    public void voteForCandidateOne() {
+        candidateOneVotes++;
+    }
+    public void voteForCandidateTwo() {
+        candidateTwoVotes++;
+    }
+
+    public String getElectionResult() {
+        return candidateOneName + ": " + candidateOneVotes + " votes." + System.lineSeparator() + candidateTwoName + ": " + candidateTwoVotes + " votes.";
     }
 }
